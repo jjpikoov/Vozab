@@ -20,8 +20,9 @@ public class DatabaseView extends SimpleFrameView
 	private JList<String> recordsList;
 	private DefaultListModel<String> recordsListModel;
 	private JButton addButton;
-	private JButton renameButton;
+	private JButton editButton;
 	private JButton deleteButton;
+	private JButton saveButton;
 
 
     public DatabaseView() 
@@ -55,8 +56,9 @@ public class DatabaseView extends SimpleFrameView
 	private void createButtons()
 	{
 		addButton = new JButton("Add");
-		renameButton = new JButton("Rename");
+		editButton = new JButton("Edit");
 		deleteButton = new JButton("Delete");
+		saveButton = new JButton("Save");
 		
 		addButton.addActionListener(new ActionListener()
 		{
@@ -102,19 +104,21 @@ public class DatabaseView extends SimpleFrameView
 				.addComponent(scroll)
 				.addGroup(gl.createParallelGroup()
 						.addComponent(addButton)
-						.addComponent(renameButton)
+						.addComponent(editButton)
 						.addComponent(deleteButton)
+						.addComponent(saveButton)
 						));
 		
 		gl.setVerticalGroup(gl.createParallelGroup(Alignment.CENTER)
 				.addComponent(scroll)
 				.addGroup(gl.createSequentialGroup()
 						.addComponent(addButton)
-						.addComponent(renameButton)
+						.addComponent(editButton)
 						.addComponent(deleteButton)
+						.addComponent(saveButton)
 						));
 		
-		gl.linkSize(addButton, deleteButton, renameButton);
+		gl.linkSize(addButton, deleteButton, editButton, saveButton);
 		
 		
 	}
