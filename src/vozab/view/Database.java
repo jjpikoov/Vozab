@@ -15,7 +15,7 @@ import javax.swing.ListSelectionModel;
 
 public class Database extends SimpleFrame
 {
-	private JList<String> recordsList;
+	public JList<String> recordsList; // public or private
 	private DefaultListModel<String> recordsListModel;
 	private JButton addButton;
 	private JButton renameButton;
@@ -37,7 +37,6 @@ public class Database extends SimpleFrame
 
 	public void createList(String[] records)
 	{
-		//Maybe it could be done without DefaultListModel
 		recordsListModel = new DefaultListModel<String>();
 		
 		for (String record : records) {
@@ -45,9 +44,15 @@ public class Database extends SimpleFrame
 		}
 		
 		recordsList = new JList<String>(recordsListModel);
-
 		recordsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 	}
+
+	
+	public String getLastEntry()
+	{
+		return recordsListModel.lastElement();
+	}
+	
 	
 	private void createButtons()
 	{
@@ -76,6 +81,7 @@ public class Database extends SimpleFrame
 				{
 					//How to save it to file?
 					recordsListModel.addElement(entry);
+
 				}
 				
 			}

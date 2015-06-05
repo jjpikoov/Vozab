@@ -1,6 +1,8 @@
 package vozab.controller;
 
 
+
+
 import vozab.model.DatabaseModel;
 import vozab.view.Database;
 
@@ -20,5 +22,10 @@ public class DatabaseController
 	public void setVisible()
 	{
 		dbView.setVisible();
+	}
+	
+	public void PrintLastRecord()
+	{
+		System.out.println(dbView.getLastEntry());
 	}
 }

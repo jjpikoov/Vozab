@@ -10,9 +10,9 @@ public class DatabaseModel
 	public String[] getRecords()
 	{
 		String[] tab = new String[3];
-		tab[0] = "Lubie";
-		tab[1] = "placki";
-		tab[2] = "my friend";
+		tab[0] = "KRzysiek";
+		tab[1] = "to";
+		tab[2] = "bot";
 		
 		return tab;
 	}
