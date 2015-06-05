@@ -3,6 +3,8 @@ package vozab.controller;
 
 
 
+import java.util.ArrayList;
+
 import javax.swing.DefaultListModel;
 
 import vozab.model.DatabaseModel;
@@ -17,8 +19,8 @@ public class DatabaseController
 	public DatabaseController(Database dbView, DatabaseModel dbModel)
 	{
 		this.dbView = dbView;
-		//this.dbModel = dbModel; //not essential right now
-		dbView.createList(dbModel.getRecords());
+	//	this.dbModel = dbModel; //not essential right now
+		dbView.createList(toDefaultListModel(dbModel.getRecords()));
 	}
 	
 	public void setVisible()
@@ -35,5 +37,18 @@ public class DatabaseController
 			System.out.println(records.getElementAt(i));
 		}
 		
+	}
+	
+	private DefaultListModel<String> toDefaultListModel(ArrayList<String> arraylist)
+	{
+		DefaultListModel<String> dlistmodel = new DefaultListModel<String>();
+
+		for (int i = 0; i < arraylist.size(); i++) 
+		{
+			String elem = arraylist.get(i);
+			dlistmodel.addElement(elem);
+		}
+
+		return dlistmodel;
 	}
 }

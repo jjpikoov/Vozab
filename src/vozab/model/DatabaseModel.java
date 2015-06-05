@@ -1,19 +1,21 @@
 package vozab.model;
 
+import java.util.ArrayList;
+
 public class DatabaseModel 
 {
+	private ArrayList<String> records;
+
 	public DatabaseModel()
 	{
+		records = new ArrayList<String>();
+		records.add("test");
 	}
 
 	
-	public String[] getRecords()
+
+	public ArrayList<String> getRecords()
 	{
-		String[] tab = new String[3];
-		tab[0] = "KRzysiek";
-		tab[1] = "to";
-		tab[2] = "bot";
-		
-		return tab;
+		return this.records;
 	}
 }

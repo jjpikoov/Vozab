@@ -35,13 +35,9 @@ public class Database extends SimpleFrame
 	}
 	
 
-	public void createList(String[] records)
+	public void createList(DefaultListModel<String> records)
 	{
-		recordsListModel = new DefaultListModel<String>();
-		
-		for (String record : records) {
-			recordsListModel.addElement(record);
-		}
+		recordsListModel = records;
 		
 		recordsList = new JList<String>(recordsListModel);
 		recordsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
