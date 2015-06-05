@@ -1,8 +1,6 @@
 package vozab.view;
 
-import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.Console;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -45,26 +43,4 @@ public class Database extends SimpleFrame
 	}
 	
 	
-	
-	
-	
-	
-
-	
-
-		
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
