@@ -3,7 +3,7 @@ package vozab.controller;
 import javax.swing.DefaultListModel;
 import java.util.ArrayList;
 
-protected class ArraysCotroller 
+public class ArraysController 
 {
 	protected ArrayList<String> toArrayList(DefaultListModel<String> dlistmodel)
 	{

@@ -4,7 +4,7 @@ package vozab.controller;
 import vozab.model.DatabaseModel;
 import vozab.view.Database;
 
-public class DatabaseController extends ArraysCotroller 
+public class DatabaseController extends ArraysController 
 {
 	private Database dbView;
 	//private DatabaseModel dbModel; //not essential right now
