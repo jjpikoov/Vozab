@@ -6,6 +6,8 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class ButtonsListener implements ActionListener 
 {
@@ -20,7 +22,7 @@ public class ButtonsListener implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 
-		if (e.getActionCommand().equals("Add"));
+		if (e.getActionCommand().equals("Add"))
 		{
 			String text = JOptionPane.showInputDialog("Add a new entry");
 			String entry = null;
@@ -39,6 +41,28 @@ public class ButtonsListener implements ActionListener
 				dlistmodel.addElement(entry);
 			}
 		}
+		else if (e.getActionCommand().equals("Save"))
+		{
+			try
+			{
+				String filename = ".database.txt";
+				FileWriter fw = new FileWriter(filename, false);
+				
+				for (int i = 0; i < dlistmodel.size(); i++) 
+				{
+					fw.write(dlistmodel.get(i) + "\n");
+				}
+				
+				fw.close();
+			}
+			catch(IOException ioe)
+			{
+				System.err.println("IOException: " + ioe.getMessage());
+			}
+		}
+		
+		
+		
 				
 	}
 
