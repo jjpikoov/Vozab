@@ -48,12 +48,12 @@ public class Database extends SimpleFrame
 	}
 
 	
-	public String getLastEntry()
+	public DefaultListModel<String> getRecordsListModel()
 	{
-		return recordsListModel.lastElement();
+		return this.recordsListModel;
 	}
-	
-	
+
+
 	private void createButtons()
 	{
 		addButton = new JButton("Add");
@@ -118,12 +118,8 @@ public class Database extends SimpleFrame
 		
 		gl.linkSize(addButton, deleteButton, renameButton);
 		
-		//Maybe pack?
-		
 		
 	}
-	
-	
 	
 	
 }

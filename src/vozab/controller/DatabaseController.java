@@ -3,6 +3,8 @@ package vozab.controller;
 
 
 
+import javax.swing.DefaultListModel;
+
 import vozab.model.DatabaseModel;
 import vozab.view.Database;
 
@@ -24,8 +26,14 @@ public class DatabaseController
 		dbView.setVisible();
 	}
 	
-	public void PrintLastRecord()
+	public void printRecords()
 	{
-		System.out.println(dbView.getLastEntry());
+		DefaultListModel<String> records = dbView.getRecordsListModel();
+		
+		for (int i = 0; i < records.size(); i++) 
+		{
+			System.out.println(records.getElementAt(i));
+		}
+		
 	}
 }
