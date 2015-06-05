@@ -1,10 +1,16 @@
 package vozab.view;
 
-import java.awt.event.MouseEvent;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.DefaultListModel;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
 public class Database extends SimpleFrame
@@ -24,6 +30,7 @@ public class Database extends SimpleFrame
 	@Override
 	public void setVisible() 
 	{
+		initUI();
 		super.setVisible();
 	}
 	
@@ -41,6 +48,76 @@ public class Database extends SimpleFrame
 
 		recordsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 	}
+	
+	private void createButtons()
+	{
+		addButton = new JButton("Add");
+		renameButton = new JButton("Rename");
+		deleteButton = new JButton("Delete");
+		
+		addButton.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				String text = JOptionPane.showInputDialog("Add a new entry");
+				String entry = null;
+				
+				if (text != null)
+				{
+					entry = text.trim();
+				}
+				else
+				{
+					return;
+				}
+				
+				if(!entry.isEmpty())
+				{
+					//How to save it to file?
+					recordsListModel.addElement(entry);
+				}
+				
+			}
+		});
+	}
+	
+	private void initUI()
+	{
+		createButtons();
+		JScrollPane scroll = new JScrollPane(recordsList);
+		
+		Container pane = super.getContentPane();
+		GroupLayout gl = new GroupLayout(pane);
+		pane.setLayout(gl);
+		
+		gl.setAutoCreateContainerGaps(true);
+		gl.setAutoCreateGaps(true);
+		
+		gl.setHorizontalGroup(gl.createSequentialGroup()
+				.addComponent(scroll)
+				.addGroup(gl.createParallelGroup()
+						.addComponent(addButton)
+						.addComponent(renameButton)
+						.addComponent(deleteButton)
+						));
+		
+		gl.setVerticalGroup(gl.createParallelGroup(Alignment.CENTER)
+				.addComponent(scroll)
+				.addGroup(gl.createSequentialGroup()
+						.addComponent(addButton)
+						.addComponent(renameButton)
+						.addComponent(deleteButton)
+						));
+		
+		gl.linkSize(addButton, deleteButton, renameButton);
+		
+		//Maybe pack?
+		
+		
+	}
+	
+	
 	
 	
 }

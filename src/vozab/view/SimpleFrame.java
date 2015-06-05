@@ -1,5 +1,7 @@
 package vozab.view;
 
+import java.awt.Container;
+
 import javax.swing.JFrame;
 
 public class SimpleFrame
@@ -17,7 +19,13 @@ public class SimpleFrame
 	{
 		frame.setVisible(true);
 	}
-
+	
+	
+	protected Container getContentPane()
+	{
+		return frame.getContentPane();
+	}
+	
 
 	private void initUI(String title, int x, int y)
 	{
@@ -26,4 +34,7 @@ public class SimpleFrame
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
+	
+	
 }
