@@ -1,15 +1,15 @@
-package vozab.view;
+package vozab.frame;
 
 import java.awt.Container;
 
 import javax.swing.JFrame;
 
-public class SimpleFrame
+public class SimpleFrameView
 {
 	private JFrame frame = new JFrame();
 
 
-	protected SimpleFrame(String title, int x, int y)
+	protected SimpleFrameView(String title, int x, int y)
 	{
 		initUI(title, x, y);
 	}
@@ -34,7 +34,4 @@ public class SimpleFrame
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	
-	
-	
 }

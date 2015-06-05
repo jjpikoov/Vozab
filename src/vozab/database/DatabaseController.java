@@ -1,16 +1,14 @@
-package vozab.controller;
+package vozab.database;
 
 
-import vozab.model.DatabaseModel;
-import vozab.view.Database;
 
 public class DatabaseController extends ArraysController 
 {
-	private Database dbView;
+	private DatabaseView dbView;
 	//private DatabaseModel dbModel; //not essential right now
 
 
-	public DatabaseController(Database dbView, DatabaseModel dbModel)
+	public DatabaseController(DatabaseView dbView, DatabaseModel dbModel)
 	{
 		this.dbView = dbView;
 	//	this.dbModel = dbModel; //not essential right now

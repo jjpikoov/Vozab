@@ -1,4 +1,4 @@
-package vozab.model;
+package vozab.database;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,6 @@ public class DatabaseModel
 	public DatabaseModel()
 	{
 		records = new ArrayList<String>();
-		records.add("test");
 	}
 
 

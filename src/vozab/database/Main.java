@@ -1,7 +1,5 @@
-package vozab.controller;
+package vozab.database;
 
-import vozab.model.DatabaseModel;
-import vozab.view.*;
 
 
 public class Main {
@@ -9,7 +7,7 @@ public class Main {
 	public static void main(String[] args) 
 	{
 
-		Database dbView = new Database();
+		DatabaseView dbView = new DatabaseView();
 		DatabaseModel dbModel = new DatabaseModel();
 		DatabaseController dbController = new DatabaseController(dbView, dbModel);
 		dbController.setVisible();

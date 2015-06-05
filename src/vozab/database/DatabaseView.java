@@ -1,4 +1,4 @@
-package vozab.view;
+package vozab.database;
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
@@ -13,16 +13,18 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
-public class Database extends SimpleFrame
+import vozab.frame.SimpleFrameView;
+
+public class DatabaseView extends SimpleFrameView
 {
-	public JList<String> recordsList; // public or private
+	private JList<String> recordsList;
 	private DefaultListModel<String> recordsListModel;
 	private JButton addButton;
 	private JButton renameButton;
 	private JButton deleteButton;
 
 
-    public Database() 
+    public DatabaseView() 
 	{
 		super("Database", 400, 400);
 	}
@@ -116,6 +118,4 @@ public class Database extends SimpleFrame
 		
 		
 	}
-	
-	
 }

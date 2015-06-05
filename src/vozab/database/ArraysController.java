@@ -1,4 +1,4 @@
-package vozab.controller;
+package vozab.database;
 
 import javax.swing.DefaultListModel;
 import java.util.ArrayList;
