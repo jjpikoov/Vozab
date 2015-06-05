@@ -1,16 +1,14 @@
 package vozab.controller;
 
-import vozab.view.SimpleFrame;
+import vozab.view.*;
 
 
 public class Main {
 
 	public static void main(String[] args) 
 	{
-		
-		SimpleFrame simpleframe = new SimpleFrame("test", 300, 300);
-		simpleframe.setVisible();
-
+		Database db = new Database();
+		db.setVisible();
 
 	}
 

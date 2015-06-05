@@ -7,13 +7,13 @@ public class SimpleFrame
 	private JFrame frame = new JFrame();
 
 
-	public SimpleFrame(String title, int x, int y)
+	protected SimpleFrame(String title, int x, int y)
 	{
 		initUI(title, x, y);
 	}
 	
 
-	public void setVisible()
+	protected void setVisible()
 	{
 		frame.setVisible(true);
 	}
