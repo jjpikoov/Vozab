@@ -12,7 +12,6 @@ public class DatabaseModel
 		records.add("test");
 	}
 
-	
 
 	public ArrayList<String> getRecords()
 	{

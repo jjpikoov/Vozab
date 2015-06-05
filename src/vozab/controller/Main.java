@@ -13,7 +13,6 @@ public class Main {
 		DatabaseModel dbModel = new DatabaseModel();
 		DatabaseController dbController = new DatabaseController(dbView, dbModel);
 		dbController.setVisible();
-		dbController.printRecords();
 	}
 
 }
