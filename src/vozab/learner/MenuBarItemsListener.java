@@ -7,6 +7,7 @@ import vozab.database.DatabaseController;
 import vozab.database.DatabaseModel;
 import vozab.database.DatabaseView;
 import vozab.frame.About;
+import vozab.frame.Manual;
 
 public class MenuBarItemsListener implements ActionListener
 {
@@ -27,6 +28,11 @@ public class MenuBarItemsListener implements ActionListener
 			DatabaseModel dbModel = new DatabaseModel();
 			DatabaseController dbController = new DatabaseController(dbView, dbModel);
 			dbController.setVisible();
+		}
+		if (e.getActionCommand().equals("Manual"))
+		{
+			Manual manual = new Manual();
+			manual.setVisible();
 		}
 
 	}

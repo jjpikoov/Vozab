@@ -27,10 +27,12 @@ public class LearnerMenuView extends SimpleFrameView
 		JMenu help = new JMenu("Help");
 		JMenuItem closeMItem = new JMenuItem("Exit");
 		JMenuItem databaseMItem = new JMenuItem("Database");
+		JMenuItem manualMItem = new JMenuItem("Manual");
 		JMenuItem aboutMIterm = new JMenuItem("About");
 		
 		file.add(databaseMItem);
 		file.add(closeMItem);
+		help.add(manualMItem);
 		help.add(aboutMIterm);
 
 		menubar.add(file);
@@ -41,8 +43,7 @@ public class LearnerMenuView extends SimpleFrameView
 		closeMItem.addActionListener(mbil);
 		aboutMIterm.addActionListener(mbil);
 		databaseMItem.addActionListener(mbil);
-
-		
+		manualMItem.addActionListener(mbil);
 	}
 	
 	
