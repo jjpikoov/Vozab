@@ -1,14 +1,13 @@
 package vozab.main;
 
-import vozab.learner.LearnerMenuView;
+import vozab.learner.LearnerView;
 
 
 public class Main {
 
 	public static void main(String[] args) 
 	{
-		LearnerMenuView lmView = new LearnerMenuView();
-		lmView.setVisible();
+		LearnerView lView = new LearnerView();
+		lView.setVisible();
 	}
-
 }
