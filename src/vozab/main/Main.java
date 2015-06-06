@@ -1,9 +1,6 @@
 package vozab.main;
 
-import vozab.database.DatabaseModel;
-import vozab.database.DatabaseView;
 import vozab.learner.LearnerMenuView;
-
 
 
 public class Main {

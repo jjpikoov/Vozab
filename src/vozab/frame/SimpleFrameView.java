@@ -26,6 +26,4 @@ public class SimpleFrameView
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	
-	
 }

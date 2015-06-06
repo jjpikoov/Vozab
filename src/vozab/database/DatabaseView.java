@@ -1,10 +1,12 @@
 package vozab.database;
 
 import java.awt.Container;
+
 import javax.swing.DefaultListModel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
@@ -24,6 +26,7 @@ public class DatabaseView extends SimpleFrameView
     public DatabaseView() 
 	{
 		super("Database", 400, 400);
+		super.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 	@Override

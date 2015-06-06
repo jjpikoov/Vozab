@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import vozab.database.DatabaseController;
 import vozab.database.DatabaseModel;
 import vozab.database.DatabaseView;
+import vozab.frame.About;
 
 public class MenuBarItemsListener implements ActionListener
 {
@@ -17,7 +18,8 @@ public class MenuBarItemsListener implements ActionListener
 		}
 		if(e.getActionCommand().equals("About"))
 		{
-			System.out.println("TO DO");
+			About about = new About();
+			about.setVisible();
 		}
 		if(e.getActionCommand().equals("Database"))
 		{
