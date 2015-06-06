@@ -56,9 +56,10 @@ public class DatabaseView extends SimpleFrameView
 		deleteButton = new JButton("Delete");
 		saveButton = new JButton("Save");
 		
-		ButtonsListener listener = new ButtonsListener(recordsListModel);
+		ButtonsListener listener = new ButtonsListener(recordsListModel, recordsList);
 		addButton.addActionListener(listener);
 		saveButton.addActionListener(listener);
+		editButton.addActionListener(listener);
 	}
 	
 	private void initUI()
