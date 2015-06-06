@@ -20,7 +20,6 @@ public class DatabaseModel
 		}
 		catch(IOException ioe)
 		{
-			System.err.println(ioe.getMessage());
 			RECORDS = createNewRecordsFile();
 		}
 	}
@@ -74,13 +73,11 @@ public class DatabaseModel
 	private ArrayList<String> createNewRecordsFile()
 	{
 		ArrayList<String> output = new ArrayList<String>();
-		output.add("test");
 
 		PrintWriter writer;
 		try
 		{
 			writer = new PrintWriter(".database.txt");
-			writer.println("test");
 			writer.close();
 		}
 		catch(IOException ioe)
