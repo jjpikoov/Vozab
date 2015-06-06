@@ -6,21 +6,26 @@ import java.util.ArrayList;
 
 public class DatabaseModel 
 {
-	private ArrayList<String> records;
+	static private ArrayList<String> RECORDS; 
+
 
 	public DatabaseModel()
 	{
-		records = new ArrayList<String>();
+		RECORDS = new ArrayList<String>();
 	}
 
 
 	public ArrayList<String> getRecords()
 	{
-		return this.records;
+		return DatabaseModel.RECORDS;
 	}
 	
+
 	public void saveRecords(ArrayList<String> records)
 	{
+
+		DatabaseModel.RECORDS = records;
+
 		try
 		{
 			String filename = ".database.txt";
@@ -38,6 +43,4 @@ public class DatabaseModel
 			System.err.println("IOException: " + ioe.getMessage());
 		}
 	}
-
-	
 }
