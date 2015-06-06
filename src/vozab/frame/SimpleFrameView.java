@@ -1,12 +1,10 @@
 package vozab.frame;
 
-import java.awt.Container;
-
 import javax.swing.JFrame;
 
 public class SimpleFrameView
 {
-	private JFrame frame = new JFrame();
+	protected JFrame frame = new JFrame();///or private?
 
 
 	protected SimpleFrameView(String title, int x, int y)
@@ -20,12 +18,6 @@ public class SimpleFrameView
 		frame.setVisible(true);
 	}
 	
-	
-	protected Container getContentPane()
-	{
-		return frame.getContentPane();
-	}
-	
 
 	private void initUI(String title, int x, int y)
 	{
@@ -34,4 +26,6 @@ public class SimpleFrameView
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
+	
 }

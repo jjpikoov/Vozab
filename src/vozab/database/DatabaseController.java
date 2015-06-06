@@ -14,6 +14,7 @@ public class DatabaseController extends ArraysController
 		this.dbModel = dbModel;
 		dbView.createList(this.toDefaultListModel(this.dbModel.getRecords()));
 	}
+
 	
 	public void setVisible()
 	{

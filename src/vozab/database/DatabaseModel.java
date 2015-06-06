@@ -32,7 +32,6 @@ public class DatabaseModel
 	
 	public void saveRecords(ArrayList<String> records)
 	{
-
 		DatabaseModel.RECORDS = records;
 
 		try

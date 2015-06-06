@@ -63,13 +63,14 @@ public class DatabaseView extends SimpleFrameView
 		deleteButton.addActionListener(listener);
 	}
 	
+
 	private void initUI()
 	{
 		createButtons();
 
 		JScrollPane scroll = new JScrollPane(recordsList);
 		
-		Container pane = super.getContentPane();
+		Container pane = super.frame.getContentPane();
 		GroupLayout gl = new GroupLayout(pane);
 		pane.setLayout(gl);
 		
@@ -95,7 +96,5 @@ public class DatabaseView extends SimpleFrameView
 						));
 		
 		gl.linkSize(addButton, deleteButton, editButton, saveButton);
-		
-		
 	}
 }
