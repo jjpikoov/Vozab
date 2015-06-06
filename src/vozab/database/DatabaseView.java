@@ -60,6 +60,7 @@ public class DatabaseView extends SimpleFrameView
 		addButton.addActionListener(listener);
 		saveButton.addActionListener(listener);
 		editButton.addActionListener(listener);
+		deleteButton.addActionListener(listener);
 	}
 	
 	private void initUI()

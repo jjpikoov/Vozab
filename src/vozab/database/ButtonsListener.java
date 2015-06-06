@@ -62,6 +62,7 @@ public class ButtonsListener implements ActionListener
 			
 			Object item = dlistmodel.getElementAt(index);
 			String text = JOptionPane.showInputDialog("Edit record", item);
+
 			String newRecord = null;
 			
 			if (text != null)
@@ -77,6 +78,15 @@ public class ButtonsListener implements ActionListener
 			{
 				dlistmodel.remove(index);
 				dlistmodel.add(index, newRecord);
+			}
+		}
+		else if (e.getActionCommand().equals("Delete"))
+		{
+			ListSelectionModel selmodel = recordsList.getSelectionModel();
+			int index = selmodel.getMinSelectionIndex();
+			if (index >= 0)
+			{
+				dlistmodel.remove(index);
 			}
 		}
 	}
