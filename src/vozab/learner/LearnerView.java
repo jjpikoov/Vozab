@@ -1,8 +1,11 @@
 package vozab.learner;
 
 import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
-import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
@@ -27,38 +30,57 @@ public class LearnerView extends LearnerMenuView
 		this.createButtons();
 
 		Container pane = super.frame.getContentPane();
-		GroupLayout gl = new GroupLayout(pane);
-		pane.setLayout(gl);
+		pane.setLayout(new GridBagLayout());
+		GridBagConstraints grid = new GridBagConstraints();
+
+		grid.fill = GridBagConstraints.HORIZONTAL;
+		grid.gridx = 3; //2
+		grid.gridy = 2; //2
+		grid.gridheight = 1; //1
+		grid.gridwidth = 2; //2
+		pane.add(visibleLabel, grid);
+
+		grid.fill = GridBagConstraints.HORIZONTAL;
+		grid.gridx = 3; //2
+		grid.gridy = 4; //4
+	    grid.gridheight = 1; //1
+		grid.gridwidth = 2; //2
+		pane.add(hiddenLabel, grid);
 		
-		gl.setAutoCreateContainerGaps(true);
-		gl.setAutoCreateGaps(true);
+		grid.fill = GridBagConstraints.HORIZONTAL;
+		grid.gridx = 0; //0
+		grid.gridy = 6; //6
+	    grid.gridheight = 1; //1
+		grid.gridwidth = 2; //2
+		pane.add(previousButton, grid);
 		
-		gl.setHorizontalGroup(gl.createSequentialGroup()
-				.addComponent(previousButton)
-				.addComponent(showButton)
-				.addComponent(nextButton)
-				.addGroup(gl.createParallelGroup()
-						.addComponent(visibleLabel)
-						.addComponent(hiddenLabel)));
+		grid.fill = GridBagConstraints.HORIZONTAL;
+		grid.gridx = 2; //2
+		grid.gridy = 6; //6
+	    grid.gridheight = 1; //1
+		grid.gridwidth = 2; //2
+		pane.add(showButton, grid);
 		
-		gl.setVerticalGroup(gl.createParallelGroup()
-				.addComponent(previousButton)
-				.addComponent(showButton)
-				.addComponent(nextButton)
-				.addGroup(gl.createSequentialGroup()
-						.addComponent(visibleLabel)
-						.addComponent(hiddenLabel)
-						));
-		gl.linkSize(previousButton, showButton, nextButton);
-		gl.linkSize(visibleLabel, hiddenLabel);
-		
+		grid.fill = GridBagConstraints.HORIZONTAL;
+		grid.gridx = 4; //4
+		grid.gridy = 6; //6
+	    grid.gridheight = 1; //1
+		grid.gridwidth = 2; //2
+		pane.add(nextButton, grid);
 	}
 	
 
 	private void createLabels()
 	{
-		visibleLabel = new JLabel("abc");
-		hiddenLabel = new JLabel("def");
+		Font f = new Font("serif", Font.PLAIN, 50);
+
+		visibleLabel = new JLabel("/////");
+		visibleLabel.setFont(f);
+		visibleLabel.setPreferredSize(new Dimension(200, 200));
+
+		hiddenLabel = new JLabel("_ _ _ _ _");
+		hiddenLabel.setFont(f);
+		hiddenLabel.setPreferredSize(new Dimension(200,200));
 	}
 	
 	
