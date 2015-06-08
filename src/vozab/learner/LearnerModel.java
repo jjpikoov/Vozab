@@ -7,34 +7,34 @@ import vozab.database.DatabaseModel;
 public class LearnerModel extends DatabaseModel
 {
 	private int index;
-	public String current;
-	public String previous;
-	public String next;
 	private ArrayList<String> records;
+	private ArrayList<String> visibleRecord;
+	private ArrayList<String> hiddenRecord;
 
 	public LearnerModel()
 	{
 		super();
 		this.records = super.getRecords();
+		this.splitRecords();
 }
 	
-	public String getCurrent()
+	public String getCurrentVisible()
 	{
 		if (inScope(this.index))
 		{
-			return this.records.get(index);
+			return this.visibleRecord.get(index);
 		}
 		else
 		{
-			if (this.index >= this.records.size())
+			if (this.index >= this.visibleRecord.size())
 			{
 				this.index = 0;
-				return this.getCurrent();
+				return this.getCurrentVisible();
 			}
 			else if (this.index < 0)
 			{
-				index = this.records.size() - 1;
-				return this.getCurrent();
+				index = this.visibleRecord.size() - 1;
+				return this.getCurrentVisible();
 			}
 		}
 		
@@ -43,19 +43,43 @@ public class LearnerModel extends DatabaseModel
 	}
 	
 	
-	public String getPrevious()
+	public String getPreviousVisible()
 	{
 		this.index -= 1;
-		return getCurrent();
+		return getCurrentVisible();
 	}
 	
-	public String getNext()
+	public String getNextVisible()
 	{
 		this.index += 1;
-		return getCurrent();
+		return getCurrentVisible();
 	}
 	
 
+	public String getCurrentHidden() 
+	{
+		if (inScope(this.index))
+		{
+			return this.hiddenRecord.get(index);
+		}
+		else
+		{
+			if (this.index >= this.hiddenRecord.size())
+			{
+				this.index = 0;
+				return this.getCurrentHidden();
+			}
+			else if (this.index < 0)
+			{
+				index = this.hiddenRecord.size() - 1;
+				return this.getCurrentHidden();
+			}
+		}
+		
+		return "ERROR";
+	}
+	
+	
 	private boolean inScope(int i)
 	{
 		if (i >= 0 && i < this.records.size())
@@ -66,5 +90,22 @@ public class LearnerModel extends DatabaseModel
 		{
 			return false;
 		}
+	}
+	
+	
+	private void splitRecords()
+	{
+		visibleRecord = new ArrayList<String>();
+		hiddenRecord = new ArrayList<String>();
+
+		for (int i = 0; i < this.records.size(); i++) 
+		{
+			String record = this.records.get(i);
+			String[] splited = record.split(";");
+			
+			visibleRecord.add(splited[0]);
+			hiddenRecord.add(splited[1]);
+		}
+		
 	}
 }

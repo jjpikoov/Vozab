@@ -76,11 +76,11 @@ public class LearnerView extends LearnerMenuView
 	{
 		Font f = new Font("serif", Font.PLAIN, 50);
 
-		visibleLabel = new JLabel("123456789", SwingConstants.CENTER); //9 characters only!!!
+		visibleLabel = new JLabel("CLICK", SwingConstants.CENTER); //9 characters only!!!
 		visibleLabel.setFont(f);
 		visibleLabel.setPreferredSize(new Dimension(300, 200));
 
-		hiddenLabel = new JLabel("123456789", SwingConstants.CENTER);
+		hiddenLabel = new JLabel("NEXT", SwingConstants.CENTER);
 		hiddenLabel.setFont(f);
 		hiddenLabel.setPreferredSize(new Dimension(300,200));
 	}
@@ -91,6 +91,11 @@ public class LearnerView extends LearnerMenuView
 		previousButton = new JButton("Previous");
 		nextButton = new JButton("Next");
 		showButton = new JButton("Show answer");
+		
+		ButtonsListener listener = new ButtonsListener(visibleLabel, hiddenLabel);
+		previousButton.addActionListener(listener);
+		nextButton.addActionListener(listener);
+		showButton.addActionListener(listener);
 	}
 
 }

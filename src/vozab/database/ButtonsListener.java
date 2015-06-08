@@ -50,6 +50,7 @@ public class ButtonsListener implements ActionListener
 			
 			DatabaseModel dm = new DatabaseModel();
 			dm.saveRecords(records);
+
 		}
 		else if (e.getActionCommand().equals("Edit"))
 		{
