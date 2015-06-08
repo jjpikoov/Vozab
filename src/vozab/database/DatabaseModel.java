@@ -10,10 +10,12 @@ import java.util.ArrayList;
 public class DatabaseModel 
 {
 	static private ArrayList<String> RECORDS; 
+	static public boolean UPDATED;
 
 
 	public DatabaseModel()
 	{
+		DatabaseModel.UPDATED = true;
 		try
 		{
 			RECORDS = getRecordsFromFile(".database.txt");

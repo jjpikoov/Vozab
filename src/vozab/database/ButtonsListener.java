@@ -63,6 +63,7 @@ public class ButtonsListener implements ActionListener
 			ArrayList<String> records = ac.toArrayList(dlistmodel);
 			
 			dm.saveRecords(records);
+			DatabaseModel.UPDATED = false;
 
 		}
 		else if (e.getActionCommand().equals("Edit"))

@@ -14,9 +14,9 @@ public class LearnerModel extends DatabaseModel
 	public LearnerModel()
 	{
 		super();
-		this.records = super.getRecords();
-		this.splitRecords();
-}
+		this.update();
+	}
+
 	
 	public String getCurrentVisible()
 	{
@@ -89,6 +89,13 @@ public class LearnerModel extends DatabaseModel
 		}
 		
 		return "ERROR";
+	}
+	
+
+	public void update()
+	{
+		this.records = super.getRecords();
+		this.splitRecords();
 	}
 	
 	

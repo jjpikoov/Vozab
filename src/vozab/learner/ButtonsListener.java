@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 
+import vozab.database.DatabaseModel;
+
 public class ButtonsListener implements ActionListener
 {
 	private JLabel visibleLabel, hiddenLabel;
@@ -22,16 +24,31 @@ public class ButtonsListener implements ActionListener
 	{
 		if (e.getActionCommand().equals("Previous"))
 		{
+			if (DatabaseModel.UPDATED == false)
+			{
+				lm.update();
+			}
+
 			this.visibleLabel.setText(lm.getPreviousVisible());
 			this.hiddenLabel.setText("________");
 		}
 		else if (e.getActionCommand().equals("Next"))
 		{
+			if (DatabaseModel.UPDATED == false)
+			{
+				lm.update();
+			}
+
 			this.visibleLabel.setText(lm.getNextVisible());
 			this.hiddenLabel.setText("________");
 		}
 		else if (e.getActionCommand().equals("Show answer"))
 		{
+			if (DatabaseModel.UPDATED == false)
+			{
+				lm.update();
+			}
+
 			this.hiddenLabel.setText(lm.getCurrentHidden());
 		}
 	}

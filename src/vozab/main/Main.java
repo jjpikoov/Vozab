@@ -9,12 +9,6 @@ public class Main
 	{
 		LearnerView lView = new LearnerView();
 		lView.setVisible();
-		
-//		String foo = "skldfjslkdfj;";
-//		String[] xyz = foo.split(";");
-//		System.out.println(xyz[0]);
-//		System.out.println(xyz[1]);
-
 	}
 }
 

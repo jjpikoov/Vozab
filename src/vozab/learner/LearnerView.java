@@ -76,7 +76,7 @@ public class LearnerView extends LearnerMenuView
 	{
 		Font f = new Font("serif", Font.PLAIN, 50);
 
-		visibleLabel = new JLabel("CLICK", SwingConstants.CENTER); //9 characters only!!!
+		visibleLabel = new JLabel("CLICK", SwingConstants.CENTER); 
 		visibleLabel.setFont(f);
 		visibleLabel.setPreferredSize(new Dimension(400, 200));
 
