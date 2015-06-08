@@ -7,6 +7,7 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
 public class LearnerView extends LearnerMenuView
@@ -28,6 +29,12 @@ public class LearnerView extends LearnerMenuView
 	{
 		this.createLabels();
 		this.createButtons();
+
+		if (LearnerModel.BADFILE == true)
+		{
+			JOptionPane.showMessageDialog(this.frame, "Your database.txt file is improper. Program can behave not predictable.", 
+					"Database Error", JOptionPane.ERROR_MESSAGE);
+		}
 
 		Container pane = super.frame.getContentPane();
 		pane.setLayout(new GridBagLayout());
@@ -67,7 +74,6 @@ public class LearnerView extends LearnerMenuView
 	    grid.gridheight = 1; 
 		grid.gridwidth = 2; 
 		pane.add(nextButton, grid);
-		
 		
 	}
 	

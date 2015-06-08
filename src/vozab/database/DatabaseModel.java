@@ -108,7 +108,7 @@ public class DatabaseModel
 	}
 	
 
-	private ArrayList<String> createNewRecordsFile()
+	protected ArrayList<String> createNewRecordsFile()
 	{
 		ArrayList<String> output = new ArrayList<String>();
 

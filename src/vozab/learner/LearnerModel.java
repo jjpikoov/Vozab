@@ -11,10 +11,12 @@ public class LearnerModel extends DatabaseModel
 	private ArrayList<String> visibleRecord;
 	private ArrayList<String> hiddenRecord;
 	static public boolean NODATA;
+	static public boolean BADFILE;
 
 	public LearnerModel()
 	{
 		super();
+		LearnerModel.BADFILE = false;
 		this.update();
 		LearnerModel.NODATA = true;
 	}
@@ -123,13 +125,21 @@ public class LearnerModel extends DatabaseModel
 		visibleRecord = new ArrayList<String>();
 		hiddenRecord = new ArrayList<String>();
 
+			
 		for (int i = 0; i < this.records.size(); i++) 
 		{
-			String record = this.records.get(i);
-			String[] splited = record.split(";");
+			try
+			{
+				String record = this.records.get(i);
+				String[] splited = record.split(";");
 			
-			visibleRecord.add(splited[0]);
-			hiddenRecord.add(splited[1]);
+				visibleRecord.add(splited[0]);
+				hiddenRecord.add(splited[1]);
+			}
+			catch(ArrayIndexOutOfBoundsException aiobe)
+			{
+				LearnerModel.BADFILE = true;
+			}
 		}
 		
 	}
