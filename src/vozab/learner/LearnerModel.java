@@ -20,9 +20,15 @@ public class LearnerModel extends DatabaseModel
 	
 	public String getCurrentVisible()
 	{
+		if (this.visibleRecord.isEmpty())
+		{
+			return "NO DATA";
+		}
+
 		if (inScope(this.index))
 		{
 			return this.visibleRecord.get(index);
+			
 		}
 		else
 		{
@@ -58,6 +64,12 @@ public class LearnerModel extends DatabaseModel
 
 	public String getCurrentHidden() 
 	{
+		if (this.hiddenRecord.isEmpty())
+		{
+			return "NO DATA";
+		}
+
+
 		if (inScope(this.index))
 		{
 			return this.hiddenRecord.get(index);

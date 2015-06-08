@@ -78,11 +78,11 @@ public class LearnerView extends LearnerMenuView
 
 		visibleLabel = new JLabel("CLICK", SwingConstants.CENTER); //9 characters only!!!
 		visibleLabel.setFont(f);
-		visibleLabel.setPreferredSize(new Dimension(300, 200));
+		visibleLabel.setPreferredSize(new Dimension(400, 200));
 
 		hiddenLabel = new JLabel("NEXT", SwingConstants.CENTER);
 		hiddenLabel.setFont(f);
-		hiddenLabel.setPreferredSize(new Dimension(300,200));
+		hiddenLabel.setPreferredSize(new Dimension(400,200));
 	}
 	
 	
