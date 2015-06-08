@@ -32,30 +32,20 @@ public class ButtonsListener implements ActionListener
 		if (e.getActionCommand().equals("Add"))
 		{
 
-			String text = JOptionPane.showInputDialog("Add a new entry");
-			String entry = null;
-					
-			if (text != null)
+			String entry = JOptionPane.showInputDialog("Add a new entry");
+			
+			if (dm.isRightInput(entry) == false && entry != null)
 			{
-				entry = text.trim();
-				
-				if ((!entry.endsWith(";")) &&  dm.howManySemicolons(entry) == 1 && (!entry.startsWith(";")) && entry.length() <= 19)
-				{
-				}
-				else
-				{
-					JOptionPane.showMessageDialog(this.frame, "Error! Please go to Help > Manual", 
-							"Input Error", JOptionPane.ERROR_MESSAGE);
-					return;
-					
-				}
-					
-			}
-			else
-			{
+				JOptionPane.showMessageDialog(this.frame, "InputError! Please go to Help > Manual", 
+						"Input Error", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 					
+			if (entry == null)
+			{
+				return;
+			}
+
 			if(!entry.isEmpty())
 			{
 				dlistmodel.addElement(entry);
@@ -80,23 +70,25 @@ public class ButtonsListener implements ActionListener
 			}
 			
 			Object item = dlistmodel.getElementAt(index);
-			String text = JOptionPane.showInputDialog("Edit record", item);
+			String entry2 = JOptionPane.showInputDialog("Edit record", item);
 
-			String newRecord = null;
-			
-			if (text != null)
+
+			if (dm.isRightInput(entry2) == false && entry2 != null)
 			{
-				newRecord = text.trim();
-			}
-			else
+				JOptionPane.showMessageDialog(this.frame, "InputError! Please go to Help > Manual", 
+						"Input Error", JOptionPane.ERROR_MESSAGE);
+				return;
+			}	
+			
+			if (entry2 == null)
 			{
 				return;
 			}
-			
-			if (!newRecord.isEmpty())
+
+			if (!entry2.isEmpty())
 			{
 				dlistmodel.remove(index);
-				dlistmodel.add(index, newRecord);
+				dlistmodel.add(index, entry2);
 			}
 		}
 		else if (e.getActionCommand().equals("Delete"))

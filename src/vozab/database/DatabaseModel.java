@@ -55,7 +55,29 @@ public class DatabaseModel
 	}
 	
 	
-	public int howManySemicolons(String s)
+	public boolean isRightInput(String entry)
+	{
+		if (entry != null)
+		{
+			entry = entry.trim();
+			
+			if ((!entry.endsWith(";")) &&  this.howManySemicolons(entry) == 1 && (!entry.startsWith(";")) && entry.length() <= 19)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	
+	private int howManySemicolons(String s)
 	{
 		int count = 0;
 
@@ -68,7 +90,7 @@ public class DatabaseModel
 		}
 		return count;
 	}
-	
+
 	
 	private ArrayList<String > getRecordsFromFile(String pathToFile) throws IOException
 	{
