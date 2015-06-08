@@ -8,6 +8,7 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class LearnerView extends LearnerMenuView
 {
@@ -34,38 +35,38 @@ public class LearnerView extends LearnerMenuView
 		GridBagConstraints grid = new GridBagConstraints();
 
 		grid.fill = GridBagConstraints.HORIZONTAL;
-		grid.gridx = 3; //2
-		grid.gridy = 2; //2
-		grid.gridheight = 1; //1
-		grid.gridwidth = 2; //2
+		grid.gridx = 3; 
+		grid.gridy = 2; 
+		grid.gridheight = 1; 
+		grid.gridwidth = 2; 
 		pane.add(visibleLabel, grid);
 
 		grid.fill = GridBagConstraints.HORIZONTAL;
-		grid.gridx = 3; //2
-		grid.gridy = 4; //4
-	    grid.gridheight = 1; //1
-		grid.gridwidth = 2; //2
+		grid.gridx = 3; 
+		grid.gridy = 4; 
+	    grid.gridheight = 1; 
+		grid.gridwidth = 2; 
 		pane.add(hiddenLabel, grid);
 		
 		grid.fill = GridBagConstraints.HORIZONTAL;
-		grid.gridx = 0; //0
-		grid.gridy = 6; //6
-	    grid.gridheight = 1; //1
-		grid.gridwidth = 2; //2
+		grid.gridx = 3; 
+		grid.gridy = 6; 
+	    grid.gridheight = 1; 
+		grid.gridwidth = 2; 
 		pane.add(previousButton, grid);
 		
 		grid.fill = GridBagConstraints.HORIZONTAL;
-		grid.gridx = 2; //2
-		grid.gridy = 6; //6
-	    grid.gridheight = 1; //1
-		grid.gridwidth = 2; //2
+		grid.gridx = 3; 
+		grid.gridy = 8; 
+	    grid.gridheight = 1; 
+		grid.gridwidth = 2; 
 		pane.add(showButton, grid);
 		
 		grid.fill = GridBagConstraints.HORIZONTAL;
-		grid.gridx = 4; //4
-		grid.gridy = 6; //6
-	    grid.gridheight = 1; //1
-		grid.gridwidth = 2; //2
+		grid.gridx = 3; 
+		grid.gridy = 10; 
+	    grid.gridheight = 1; 
+		grid.gridwidth = 2; 
 		pane.add(nextButton, grid);
 	}
 	
@@ -74,13 +75,13 @@ public class LearnerView extends LearnerMenuView
 	{
 		Font f = new Font("serif", Font.PLAIN, 50);
 
-		visibleLabel = new JLabel("/////");
+		visibleLabel = new JLabel("sdkfjksdaaa123456", SwingConstants.CENTER); //17
 		visibleLabel.setFont(f);
-		visibleLabel.setPreferredSize(new Dimension(200, 200));
+		visibleLabel.setPreferredSize(new Dimension(300, 300));
 
-		hiddenLabel = new JLabel("_ _ _ _ _");
+		hiddenLabel = new JLabel("@", SwingConstants.CENTER);
 		hiddenLabel.setFont(f);
-		hiddenLabel.setPreferredSize(new Dimension(200,200));
+		hiddenLabel.setPreferredSize(new Dimension(300,300));
 	}
 	
 	
@@ -91,9 +92,4 @@ public class LearnerView extends LearnerMenuView
 		showButton = new JButton("Show answer");
 	}
 
-	
-	
-	
-	
-	
 }
