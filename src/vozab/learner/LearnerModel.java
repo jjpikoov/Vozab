@@ -10,11 +10,13 @@ public class LearnerModel extends DatabaseModel
 	private ArrayList<String> records;
 	private ArrayList<String> visibleRecord;
 	private ArrayList<String> hiddenRecord;
+	static public boolean NODATA;
 
 	public LearnerModel()
 	{
 		super();
 		this.update();
+		LearnerModel.NODATA = true;
 	}
 
 	
@@ -22,11 +24,13 @@ public class LearnerModel extends DatabaseModel
 	{
 		if (this.visibleRecord.isEmpty())
 		{
+			LearnerModel.NODATA = true;
 			return "NO DATA";
 		}
 
 		if (inScope(this.index))
 		{
+			LearnerModel.NODATA = false;
 			return this.visibleRecord.get(index);
 			
 		}
@@ -66,12 +70,14 @@ public class LearnerModel extends DatabaseModel
 	{
 		if (this.hiddenRecord.isEmpty())
 		{
+			LearnerModel.NODATA = true;
 			return "NO DATA";
 		}
 
 
 		if (inScope(this.index))
 		{
+			LearnerModel.NODATA = false;
 			return this.hiddenRecord.get(index);
 		}
 		else
@@ -96,8 +102,6 @@ public class LearnerModel extends DatabaseModel
 	{
 		this.records = super.getRecords();
 		this.splitRecords();
-		
-		System.out.println("UPDATED");
 	}
 	
 	

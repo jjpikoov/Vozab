@@ -18,7 +18,7 @@ public class DatabaseModel
 		DatabaseModel.UPDATED = true;
 		try
 		{
-			RECORDS = getRecordsFromFile(".database.txt");
+			RECORDS = getRecordsFromFile("database.txt");
 		}
 		catch(IOException ioe)
 		{
@@ -38,7 +38,7 @@ public class DatabaseModel
 
 		try
 		{
-			String filename = ".database.txt";
+			String filename = "database.txt";
 			FileWriter fw = new FileWriter(filename, false);
 			
 			for (int i = 0; i < records.size(); i++) 
@@ -93,7 +93,7 @@ public class DatabaseModel
 		PrintWriter writer;
 		try
 		{
-			writer = new PrintWriter(".database.txt");
+			writer = new PrintWriter("database.txt");
 			writer.close();
 		}
 		catch(IOException ioe)

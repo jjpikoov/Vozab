@@ -3,20 +3,24 @@ package vozab.learner;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import vozab.database.DatabaseModel;
 
-public class ButtonsListener implements ActionListener
+public class ButtonsListener implements ActionListener 
 {
 	private JLabel visibleLabel, hiddenLabel;
 	private LearnerModel lm;
+	private JFrame frame;
 	
-	public ButtonsListener(JLabel visibleLabel, JLabel hiddenLabel)
+	public ButtonsListener(JLabel visibleLabel, JLabel hiddenLabel, JFrame frame)
 	{
 		this.visibleLabel = visibleLabel;
 		this.hiddenLabel = hiddenLabel;
 		this.lm = new LearnerModel();
+		this.frame = frame;
 	}
 	
 	
@@ -32,6 +36,7 @@ public class ButtonsListener implements ActionListener
 
 			this.visibleLabel.setText(lm.getPreviousVisible());
 			this.hiddenLabel.setText("________");
+			this.showNoDataDialog();
 		}
 		else if (e.getActionCommand().equals("Next"))
 		{
@@ -43,6 +48,7 @@ public class ButtonsListener implements ActionListener
 
 			this.visibleLabel.setText(lm.getNextVisible());
 			this.hiddenLabel.setText("________");
+			this.showNoDataDialog();
 		}
 		else if (e.getActionCommand().equals("Show answer"))
 		{
@@ -53,6 +59,17 @@ public class ButtonsListener implements ActionListener
 			}
 
 			this.hiddenLabel.setText(lm.getCurrentHidden());
+			this.showNoDataDialog();
+		}
+	}
+	
+	
+	private void showNoDataDialog()
+	{
+		if (LearnerModel.NODATA == true)
+		{
+			JOptionPane.showMessageDialog(this.frame, "Please go to: File > Database", 
+					"NO DATA!", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 }

@@ -1,7 +1,6 @@
 package vozab.learner;
 
-import java.awt.Container;
-import java.awt.Dimension;
+import java.awt.Container; import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -69,6 +68,7 @@ public class LearnerView extends LearnerMenuView
 		grid.gridwidth = 2; 
 		pane.add(nextButton, grid);
 		
+		
 	}
 	
 
@@ -92,10 +92,9 @@ public class LearnerView extends LearnerMenuView
 		nextButton = new JButton("Next");
 		showButton = new JButton("Show answer");
 		
-		ButtonsListener listener = new ButtonsListener(visibleLabel, hiddenLabel);
+		ButtonsListener listener = new ButtonsListener(visibleLabel, hiddenLabel, super.frame);
 		previousButton.addActionListener(listener);
 		nextButton.addActionListener(listener);
 		showButton.addActionListener(listener);
 	}
-
 }

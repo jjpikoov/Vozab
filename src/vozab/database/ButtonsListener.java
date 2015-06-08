@@ -3,6 +3,7 @@ package vozab.database;
 import java.awt.event.ActionEvent;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
@@ -14,12 +15,15 @@ public class ButtonsListener implements ActionListener
 {
 	private DefaultListModel<String> dlistmodel;
 	private JList<String> recordsList;
+	private JFrame frame;
+	
 	DatabaseModel dm = new DatabaseModel();
 
-	public ButtonsListener(DefaultListModel<String> dlistmodel, JList<String> recordsList) 
+	public ButtonsListener(DefaultListModel<String> dlistmodel, JList<String> recordsList, JFrame frame) 
 	{
 		this.dlistmodel = dlistmodel;
 		this.recordsList = recordsList;
+		this.frame = frame;
 	}
 	
 	@Override
@@ -37,10 +41,11 @@ public class ButtonsListener implements ActionListener
 				
 				if ((!entry.endsWith(";")) &&  dm.howManySemicolons(entry) == 1 && (!entry.startsWith(";")) && entry.length() <= 19)
 				{
-					//some diaglogs can be added (why not added)
 				}
 				else
 				{
+					JOptionPane.showMessageDialog(this.frame, "Error! Please go to Help > Manual", 
+							"Input Error", JOptionPane.ERROR_MESSAGE);
 					return;
 					
 				}
