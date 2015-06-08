@@ -34,13 +34,14 @@ public class InfoView extends SimpleFrameView
 		panel.setBounds(20, 20, 20, 20);
 		
 		JScrollPane scroll = new JScrollPane();
-		//JTextArea area = new JTextArea();
 		
 		area.setLineWrap(true);
 		area.setWrapStyleWord(true);
 		area.setBorder(BorderFactory.createEmptyBorder(8, 8, 8, 8));
 		area.setEditable(false);
-				
+		area.setSelectionStart(0);
+		area.setSelectionEnd(0);
+
 		scroll.getViewport().add(area);
 		panel.add(scroll);
 		

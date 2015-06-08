@@ -10,7 +10,7 @@ public class LearnerMenuView extends SimpleFrameView
 {
 	public LearnerMenuView() 
 	{
-		super("Vozab", 500, 600);
+		super("Vozab - Simple java swing program to learn vocabulary", 500, 600);
 		this.initUI();
 	}
 	

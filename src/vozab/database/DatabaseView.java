@@ -25,7 +25,7 @@ public class DatabaseView extends SimpleFrameView
 
     public DatabaseView() 
 	{
-		super("Database", 400, 400);
+		super("Vozab - Database", 400, 400);
 		super.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
