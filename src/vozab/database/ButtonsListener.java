@@ -14,6 +14,7 @@ public class ButtonsListener implements ActionListener
 {
 	private DefaultListModel<String> dlistmodel;
 	private JList<String> recordsList;
+	DatabaseModel dm = new DatabaseModel();
 
 	public ButtonsListener(DefaultListModel<String> dlistmodel, JList<String> recordsList) 
 	{
@@ -26,12 +27,25 @@ public class ButtonsListener implements ActionListener
 	{
 		if (e.getActionCommand().equals("Add"))
 		{
+
 			String text = JOptionPane.showInputDialog("Add a new entry");
 			String entry = null;
 					
 			if (text != null)
 			{
 				entry = text.trim();
+				System.out.println(entry);
+				
+				if ((!entry.endsWith(";")) &&  dm.howManySemicolons(entry) == 1 && (!entry.startsWith(";")) && entry.length() <= 19)
+				{
+					//some diaglogs can be added (why not added)
+				}
+				else
+				{
+					return;
+					
+				}
+					
 			}
 			else
 			{
@@ -48,7 +62,6 @@ public class ButtonsListener implements ActionListener
 			ArraysController ac = new ArraysController();
 			ArrayList<String> records = ac.toArrayList(dlistmodel);
 			
-			DatabaseModel dm = new DatabaseModel();
 			dm.saveRecords(records);
 
 		}
