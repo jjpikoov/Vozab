@@ -96,6 +96,8 @@ public class LearnerModel extends DatabaseModel
 	{
 		this.records = super.getRecords();
 		this.splitRecords();
+		
+		System.out.println("UPDATED");
 	}
 	
 	

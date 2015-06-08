@@ -34,7 +34,6 @@ public class ButtonsListener implements ActionListener
 			if (text != null)
 			{
 				entry = text.trim();
-				System.out.println(entry);
 				
 				if ((!entry.endsWith(";")) &&  dm.howManySemicolons(entry) == 1 && (!entry.startsWith(";")) && entry.length() <= 19)
 				{

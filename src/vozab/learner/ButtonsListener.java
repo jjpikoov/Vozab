@@ -27,6 +27,7 @@ public class ButtonsListener implements ActionListener
 			if (DatabaseModel.UPDATED == false)
 			{
 				lm.update();
+				DatabaseModel.UPDATED = true;
 			}
 
 			this.visibleLabel.setText(lm.getPreviousVisible());
@@ -37,6 +38,7 @@ public class ButtonsListener implements ActionListener
 			if (DatabaseModel.UPDATED == false)
 			{
 				lm.update();
+				DatabaseModel.UPDATED = true;
 			}
 
 			this.visibleLabel.setText(lm.getNextVisible());
@@ -47,6 +49,7 @@ public class ButtonsListener implements ActionListener
 			if (DatabaseModel.UPDATED == false)
 			{
 				lm.update();
+				DatabaseModel.UPDATED = true;
 			}
 
 			this.hiddenLabel.setText(lm.getCurrentHidden());
