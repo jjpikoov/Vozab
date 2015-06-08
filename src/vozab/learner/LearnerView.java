@@ -68,6 +68,7 @@ public class LearnerView extends LearnerMenuView
 	    grid.gridheight = 1; 
 		grid.gridwidth = 2; 
 		pane.add(nextButton, grid);
+		
 	}
 	
 
@@ -75,13 +76,13 @@ public class LearnerView extends LearnerMenuView
 	{
 		Font f = new Font("serif", Font.PLAIN, 50);
 
-		visibleLabel = new JLabel("sdkfjksdaaa123456", SwingConstants.CENTER); //17
+		visibleLabel = new JLabel("123456789", SwingConstants.CENTER); //9 characters only!!!
 		visibleLabel.setFont(f);
-		visibleLabel.setPreferredSize(new Dimension(300, 300));
+		visibleLabel.setPreferredSize(new Dimension(300, 200));
 
-		hiddenLabel = new JLabel("@", SwingConstants.CENTER);
+		hiddenLabel = new JLabel("123456789", SwingConstants.CENTER);
 		hiddenLabel.setFont(f);
-		hiddenLabel.setPreferredSize(new Dimension(300,300));
+		hiddenLabel.setPreferredSize(new Dimension(300,200));
 	}
 	
 	
