@@ -4,6 +4,7 @@ import java.awt.Container; import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -32,8 +33,11 @@ public class LearnerView extends LearnerMenuView
 
 		if (LearnerModel.BADFILE == true)
 		{
-			JOptionPane.showMessageDialog(this.frame, "Your database.txt file is improper. Program can behave not predictable.", 
+			JOptionPane.showMessageDialog(this.frame, "Your database.txt file is improper. Program can behave not predictable.\n" + 
+                    "Please fix an error in that file or delete it.",
 					"Database Error", JOptionPane.ERROR_MESSAGE);
+
+            super.frame.dispatchEvent(new WindowEvent(super.frame, WindowEvent.WINDOW_CLOSING));
 		}
 
 		Container pane = super.frame.getContentPane();
