@@ -1,6 +1,7 @@
 Vozab
 =====
 Vozab - Simple java swing program to learn vocabulary.
+Program was written for university assignment.
 
 <p>Some people this kind of learning call <i>flashcards</i>.
 You can see word in one language and you should guess the translation.
