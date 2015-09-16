@@ -68,7 +68,8 @@ public class ButtonsListener implements ActionListener
 	{
 		if (LearnerModel.NODATA == true)
 		{
-			JOptionPane.showMessageDialog(this.frame, "Please go to: File > Database and add some entries.", 
+			JOptionPane.showMessageDialog(this.frame, "Please go to: File > Database and add some entries.\n" +
+                    "or go to Help > Manual.", 
 					"NO DATA!", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}

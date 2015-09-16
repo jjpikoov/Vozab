@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 
 public class About extends InfoView
 {
-	static String text = "Vozab 1.0\n\n"
+	static String text = "Vozab 1.2\n\n"
 			+ "Vozab - Simple java swing program to learn vocabulary.\n\n"
 			+ "Written by Pawel Jankowski <jjpikoov@gmail.com>\n\n"
 			+ "You can find code on \nhttps://github.com/jjpikoov/Vozab.git\n\n\n\n"

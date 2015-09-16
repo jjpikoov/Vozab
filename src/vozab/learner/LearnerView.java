@@ -34,7 +34,7 @@ public class LearnerView extends LearnerMenuView
 		if (LearnerModel.BADFILE == true)
 		{
 			JOptionPane.showMessageDialog(this.frame, "Your database.txt file is improper. Program can behave not predictable.\n" + 
-                    "Please fix an error in that file or delete it.",
+                    "Please fix that error or delete the file.",
 					"Database Error", JOptionPane.ERROR_MESSAGE);
 
             super.frame.dispatchEvent(new WindowEvent(super.frame, WindowEvent.WINDOW_CLOSING));
